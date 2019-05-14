@@ -6,5 +6,6 @@ target 'FitJournal' do
   use_frameworks!
 
   # Pods for FitJournal
+  pod "BATabBarController"
 
 end
