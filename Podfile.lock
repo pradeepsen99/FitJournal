@@ -1,20 +1,3 @@
-PODS:
-  - BATabBarController (0.1.5):
-    - Masonry
-  - Masonry (1.1.0)
-
-DEPENDENCIES:
-  - BATabBarController
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - BATabBarController
-    - Masonry
-
-SPEC CHECKSUMS:
-  BATabBarController: 5613abe7e9e840e4d47deecef6f5082187b24ecf
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-
-PODFILE CHECKSUM: 5d1e8ef17d87085288525e6c6e373803b6891cbc
+PODFILE CHECKSUM: 6b9536d88cb4a417c05399e353eb4401a60e0bcd
 
 COCOAPODS: 1.5.3
