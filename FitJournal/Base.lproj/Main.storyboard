@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="465" y="738"/>
         </scene>
-        <!--View Controller-->
+        <!--Stats View Controller-->
         <scene sceneID="OP6-FY-E8M">
             <objects>
-                <viewController id="zL9-7G-n3a" sceneMemberID="viewController">
+                <viewController id="zL9-7G-n3a" customClass="StatsViewController" customModule="FitJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PUr-Ie-cnV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="474" y="62"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="Its-zC-7ux">
             <objects>
-                <viewController id="Mze-ms-O9Q" sceneMemberID="viewController">
+                <viewController id="Mze-ms-O9Q" customClass="ProfileViewController" customModule="FitJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yln-8H-Tfh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="477" y="-628"/>
         </scene>
-        <!--View Controller-->
+        <!--Workout View Controller-->
         <scene sceneID="eua-Rb-cK9">
             <objects>
-                <viewController id="8Do-UK-kWq" sceneMemberID="viewController">
+                <viewController id="8Do-UK-kWq" customClass="WorkoutViewController" customModule="FitJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="08v-rp-oM6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
