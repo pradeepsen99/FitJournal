@@ -10,10 +10,37 @@ import UIKit
 
 class WorkoutViewController: UIViewController {
     
+    var plusButton: UIBarButtonItem? = nil
+    var addWorkoutButton: UIBarButtonItem? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.navigationController?.navigationBar.topItem?.title = "Workout"
+        
+        plusButton = UIBarButtonItem.init(
+            image: UIImage(named: "star.png")?.withRenderingMode(.alwaysTemplate),
+            style: .plain,
+            target: self,
+            action: #selector(favOnClick)
+        )
+        
+        addWorkoutButton = UIBarButtonItem.init(
+            image: UIImage(named: "star.png")?.withRenderingMode(.alwaysTemplate),
+            style: .plain,
+            target: self,
+            action: #selector(favOnClick)
+        )
+        
+        self.navigationItem.leftBarButtonItem = plusButton
+        self.navigationItem.rightBarButtonItem = addWorkoutButton
     }
     
     
+}
+
+extension WorkoutViewController{
+    @objc func favOnClick(){
+        
+    }
 }
