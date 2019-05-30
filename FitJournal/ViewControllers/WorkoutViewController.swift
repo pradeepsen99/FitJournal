@@ -19,28 +19,32 @@ class WorkoutViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = "Workout"
         
         plusButton = UIBarButtonItem.init(
-            image: UIImage(named: "star.png")?.withRenderingMode(.alwaysTemplate),
+            image: UIImage(named: "plus.png")?.withRenderingMode(.alwaysTemplate),
             style: .plain,
             target: self,
-            action: #selector(favOnClick)
+            action: #selector(plusButtonClick)
         )
         
         addWorkoutButton = UIBarButtonItem.init(
-            image: UIImage(named: "star.png")?.withRenderingMode(.alwaysTemplate),
+            image: UIImage(named: "icons8-exercise-filled-24")?.withRenderingMode(.alwaysTemplate),
             style: .plain,
             target: self,
-            action: #selector(favOnClick)
+            action: #selector(addWorkoutButtonClick)
         )
         
-        self.navigationItem.leftBarButtonItem = plusButton
-        self.navigationItem.rightBarButtonItem = addWorkoutButton
+        self.navigationItem.leftBarButtonItem = addWorkoutButton
+        self.navigationItem.rightBarButtonItem = plusButton
     }
     
     
 }
 
 extension WorkoutViewController{
-    @objc func favOnClick(){
+    @objc func plusButtonClick(){
+        
+    }
+    
+    @objc func addWorkoutButtonClick(){
         
     }
 }
