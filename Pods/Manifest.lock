@@ -2,17 +2,21 @@ PODS:
   - Charts (3.3.0):
     - Charts/Core (= 3.3.0)
   - Charts/Core (3.3.0)
+  - FSCalendar (2.8.0)
 
 DEPENDENCIES:
   - Charts
+  - FSCalendar
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Charts
+    - FSCalendar
 
 SPEC CHECKSUMS:
   Charts: ec1f57f9340054155691e84d4544a1d239d382c5
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
 
-PODFILE CHECKSUM: 52b3b173289eade4d8b5d8399f724656ef33a1fd
+PODFILE CHECKSUM: 39871a67ee97ad40482bee01cdd8b15bffba9f20
 
 COCOAPODS: 1.5.3

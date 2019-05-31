@@ -44,7 +44,13 @@ And after that click the run button and set the build to either the Simulator or
 * - [ ] Personal bio metric data
 * - [ ] Calendar with lifts done on specific dates
 * - [ ] Apple Watch support
- 
+
+
+## Libraries Used
+
+* [Charts](https://github.com/danielgindi/Charts) - Displaying Charts
+* [FSCalendar](https://github.com/WenchaoD/FSCalendar) - Displaying Calendar
+
 ## Authors
 
 * **Pradeep Senthil** [pradeepsen99](https://github.com/pradeepsen99)

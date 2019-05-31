@@ -7,5 +7,6 @@ target 'FitJournal' do
 
   # Pods for FitJournal
   pod 'Charts'
-  
+  pod 'FSCalendar'
+
 end

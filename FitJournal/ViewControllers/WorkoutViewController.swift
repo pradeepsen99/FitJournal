@@ -32,8 +32,8 @@ class WorkoutViewController: UIViewController {
             action: #selector(addWorkoutButtonClick)
         )
         
-        self.navigationItem.leftBarButtonItem = addWorkoutButton
-        self.navigationItem.rightBarButtonItem = plusButton
+        self.navigationItem.leftBarButtonItem = plusButton
+        self.navigationItem.rightBarButtonItem = addWorkoutButton
     }
     
     
