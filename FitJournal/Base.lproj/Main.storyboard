@@ -80,11 +80,11 @@
             </objects>
             <point key="canvasLocation" x="441" y="1414"/>
         </scene>
-        <!--View Controller-->
+        <!--Meals View Controller-->
         <scene sceneID="Gba-jx-gRF">
             <objects>
-                <viewController id="vN4-CY-Mpg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="guJ-RL-x59">
+                <viewController id="vN4-CY-Mpg" customClass="MealsViewController" customModule="FitJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="guJ-RL-x59" customClass="Meals">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
