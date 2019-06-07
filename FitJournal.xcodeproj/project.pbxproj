@@ -11,6 +11,7 @@
 		6A5237E6229F9037001A0D73 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5237E5229F9037001A0D73 /* WorkoutViewController.swift */; };
 		6A5237E8229F97D8001A0D73 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5237E7229F97D8001A0D73 /* StatsViewController.swift */; };
 		6A5237EA229F9847001A0D73 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5237E9229F9847001A0D73 /* ProfileViewController.swift */; };
+		6A5237EC22AB140F001A0D73 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5237EB22AB140F001A0D73 /* MealsViewController.swift */; };
 		6AE243982288D037004A06EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE243972288D037004A06EE /* AppDelegate.swift */; };
 		6AE2439A2288D037004A06EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE243992288D037004A06EE /* ViewController.swift */; };
 		6AE2439D2288D037004A06EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE2439B2288D037004A06EE /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		6A5237E5229F9037001A0D73 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		6A5237E7229F97D8001A0D73 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		6A5237E9229F9847001A0D73 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6A5237EB22AB140F001A0D73 /* MealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
 		6AE243942288D037004A06EE /* FitJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE243972288D037004A06EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AE243992288D037004A06EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				6A5237E5229F9037001A0D73 /* WorkoutViewController.swift */,
 				6A5237E7229F97D8001A0D73 /* StatsViewController.swift */,
 				6A5237E9229F9847001A0D73 /* ProfileViewController.swift */,
+				6A5237EB22AB140F001A0D73 /* MealsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				6AE243A02288D037004A06EE /* FitJournal.xcdatamodeld in Sources */,
 				6AE2439A2288D037004A06EE /* ViewController.swift in Sources */,
 				6A5237E6229F9037001A0D73 /* WorkoutViewController.swift in Sources */,
+				6A5237EC22AB140F001A0D73 /* MealsViewController.swift in Sources */,
 				6AE243982288D037004A06EE /* AppDelegate.swift in Sources */,
 				6A5237E8229F97D8001A0D73 /* StatsViewController.swift in Sources */,
 			);

@@ -20,9 +20,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="IrH-Mp-Bg9" kind="relationship" relationship="viewControllers" id="6Ak-H6-mjs"/>
-                        <segue destination="6Zm-U4-fEY" kind="relationship" relationship="viewControllers" id="u2A-MB-YjI"/>
-                        <segue destination="tlO-JE-drW" kind="relationship" relationship="viewControllers" id="a18-1n-EZf"/>
+                        <segue destination="IrH-Mp-Bg9" kind="relationship" relationship="viewControllers" id="mYP-q6-5oI"/>
+                        <segue destination="hPP-HQ-LcF" kind="relationship" relationship="viewControllers" id="BiF-2u-fM4"/>
+                        <segue destination="6Zm-U4-fEY" kind="relationship" relationship="viewControllers" id="KQh-O1-J49"/>
+                        <segue destination="tlO-JE-drW" kind="relationship" relationship="viewControllers" id="1Go-ot-nvM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CrT-9L-cY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -61,6 +62,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nic-Td-WAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1338" y="743"/>
+        </scene>
+        <!--Meals-->
+        <scene sceneID="FzT-Qp-CRv">
+            <objects>
+                <navigationController id="hPP-HQ-LcF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Meals" image="restaurant" id="C0M-f7-cdK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XCH-tf-V1H">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vN4-CY-Mpg" kind="relationship" relationship="rootViewController" id="jD2-gn-SDR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kLB-km-Euz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="441" y="1414"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Gba-jx-gRF">
+            <objects>
+                <viewController id="vN4-CY-Mpg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="guJ-RL-x59">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Avh-v6-kjz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BDS-iD-Cfx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="htZ-VJ-cKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1334" y="1415"/>
         </scene>
         <!--Profile-->
         <scene sceneID="dGK-pO-XFg">
@@ -131,6 +165,7 @@
     </scenes>
     <resources>
         <image name="icons8-exercise-filled-24" width="30" height="30"/>
+        <image name="restaurant" width="30" height="30"/>
         <image name="statistics" width="30" height="30"/>
         <image name="user_male" width="30" height="30"/>
     </resources>
