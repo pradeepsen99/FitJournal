@@ -21,7 +21,7 @@ class ExerciseViewController: UIViewController {
             image: UIImage(named: "plus.png")?.withRenderingMode(.alwaysTemplate),
             style: .plain,
             target: self,
-            action: #selector(mealsButtonClick)
+            action: #selector(addExerciseButtonClick)
         )
         
         self.navigationItem.rightBarButtonItem = settingsButton
@@ -31,8 +31,18 @@ class ExerciseViewController: UIViewController {
 }
 
 extension ExerciseViewController{
-    @objc func mealsButtonClick(){
-        
+    @objc func addExerciseButtonClick(){
+        let alert = UIAlertController(title: "New Exercise", message: "Type in the name of the new exercise!", preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "Add Exercise", style: .default) { (addWorkoutDialogClick) in
+            let textField = alert.textFields![0] as UITextField
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Bench Press, Deadlift, etc..."
+        }
+        alert.addAction(cancel)
+        alert.addAction(action)
+        self.present(alert, animated:true, completion: nil)
     }
 }
 

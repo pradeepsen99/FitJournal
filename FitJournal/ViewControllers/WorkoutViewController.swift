@@ -64,16 +64,20 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
 extension WorkoutViewController{
     @objc func plusButtonClick(){
         let alert = UIAlertController(title: "New Workout", message: "Type in the name of the new workout!", preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: "Add Workout", style: .default) { (alertAction) in
+        let action = UIAlertAction(title: "Add Workout", style: .default) { (addWorkoutDialogClick) in
             let textField = alert.textFields![0] as UITextField
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addTextField { (textField) in
-            textField.placeholder = "Enter your name"
+            textField.placeholder = "Chest Day, Back Day, Leg Day, etc..."
         }
         alert.addAction(cancel)
         alert.addAction(action)
         self.present(alert, animated:true, completion: nil)
+    }
+    
+    @objc func addWorkoutDialogClick(){
+        
     }
     
     @objc func workoutButtonClick(){
