@@ -22,7 +22,7 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var plusButton: UIBarButtonItem? = nil
     var addWorkoutButton: UIBarButtonItem? = nil
-    private let myArray: NSArray = ["First","Second","Third"]
+    private let myArray: NSArray = ["Chest Day","Back Day","Bicep Day"]
     private var myTableView: UITableView!
     
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
         let displayWidth: CGFloat = self.view.frame.width
-        let displayHeight: CGFloat = self.view.frame.height
+        let displayHeight: CGFloat = self.view.frame.height * 2
         
         myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
         myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
@@ -63,9 +63,17 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 extension WorkoutViewController{
     @objc func plusButtonClick(){
-        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "New Workout", message: "Type in the name of the new workout!", preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "Add Workout", style: .default) { (alertAction) in
+            let textField = alert.textFields![0] as UITextField
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter your name"
+        }
+        alert.addAction(cancel)
+        alert.addAction(action)
+        self.present(alert, animated:true, completion: nil)
     }
     
     @objc func workoutButtonClick(){
