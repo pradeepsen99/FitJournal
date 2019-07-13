@@ -63,7 +63,9 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 extension WorkoutViewController{
     @objc func plusButtonClick(){
-        
+        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func workoutButtonClick(){
