@@ -15,10 +15,10 @@ class ExerciseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.topItem?.title = "Meals"
+        self.navigationController?.navigationBar.topItem?.title = "Exercises"
         
         settingsButton = UIBarButtonItem.init(
-            image: UIImage(named: "restaurant.png")?.withRenderingMode(.alwaysTemplate),
+            image: UIImage(named: "plus.png")?.withRenderingMode(.alwaysTemplate),
             style: .plain,
             target: self,
             action: #selector(mealsButtonClick)
