@@ -3,20 +3,24 @@ PODS:
     - Charts/Core (= 3.3.0)
   - Charts/Core (3.3.0)
   - FSCalendar (2.8.0)
+  - SwipeCellKit (2.6.0)
 
 DEPENDENCIES:
   - Charts
   - FSCalendar
+  - SwipeCellKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Charts
     - FSCalendar
+    - SwipeCellKit
 
 SPEC CHECKSUMS:
   Charts: ec1f57f9340054155691e84d4544a1d239d382c5
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
 
-PODFILE CHECKSUM: 39871a67ee97ad40482bee01cdd8b15bffba9f20
+PODFILE CHECKSUM: 6eeebb1e323590871544e2bec77e01965a0b5a82
 
 COCOAPODS: 1.5.3

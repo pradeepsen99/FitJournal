@@ -1,14 +1,14 @@
 //
-//  MealsViewController.swift
+//  ExerciseViewController.swift
 //  FitJournal
 //
-//  Created by Pradeep Kumar on 6/7/19.
+//  Created by Pradeep Kumar on 7/12/19.
 //  Copyright © 2019 Pradeep Kumar. All rights reserved.
 //
 
 import UIKit
 
-class MealsViewController: UIViewController {
+class ExerciseViewController: UIViewController {
     
     var settingsButton: UIBarButtonItem? = nil
     
@@ -30,8 +30,9 @@ class MealsViewController: UIViewController {
     
 }
 
-extension MealsViewController{
+extension ExerciseViewController{
     @objc func mealsButtonClick(){
         
     }
 }
+

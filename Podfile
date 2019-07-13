@@ -8,5 +8,7 @@ target 'FitJournal' do
   # Pods for FitJournal
   pod 'Charts'
   pod 'FSCalendar'
+  pod 'SwipeCellKit'
+  
 
 end

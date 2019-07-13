@@ -50,6 +50,7 @@ And after that click the run button and set the build to either the Simulator or
 
 * [Charts](https://github.com/danielgindi/Charts) - Displaying Charts
 * [FSCalendar](https://github.com/WenchaoD/FSCalendar) - Displaying Calendar
+* [SwipeCellKit](https://github.com/SwipeCellKit/SwipeCellKit) - Displaying extra options in TableView
 
 ## Authors
 
