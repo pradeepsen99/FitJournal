@@ -9,24 +9,23 @@
 import UIKit
 
 class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
-        cell.textLabel!.text = "\(myArray[indexPath.row])"
-        return cell
-    }
-    
-    
     var plusButton: UIBarButtonItem? = nil
     var addWorkoutButton: UIBarButtonItem? = nil
-    private let myArray: NSArray = ["Chest Day","Back Day","Bicep Day"]
-    private var myTableView: UITableView!
+    var displayArray = ["Chest Day","Back Day","Bicep Day"]
+    var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Code to check if it is the first time running. If it is the first time code is executed then
+        //add a sample workout to fill in data-type
+        let firstRun = UserDefaults.standard.bool(forKey: "firstRun") as Bool
+        if !firstRun {
+            firstTimeRun()
+            UserDefaults.standard.set(true, forKey: "firstRun")
+        }
+        
+        
         
         self.navigationController?.navigationBar.topItem?.title = "Workout"
         
@@ -46,7 +45,29 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.navigationItem.leftBarButtonItem = plusButton
         self.navigationItem.rightBarButtonItem = addWorkoutButton
+        tableSetup()
+        arraySetup()
+    }
+    
+    func firstTimeRun(){
         
+        let workoutSample = Workout.init()
+        
+        var workoutArr = [Workout]()
+        workoutArr.append(workoutSample)
+        
+        let workoutData = try! JSONEncoder().encode(workoutArr)
+        UserDefaults.standard.set(workoutData, forKey: "savedWorkouts")
+    }
+    
+    func arraySetup(){
+        let workoutData = UserDefaults.standard.data(forKey: "savedWorkouts")
+        let workoutArr = try! JSONDecoder().decode([Workout].self, from: workoutData!)
+        displayArray.append(workoutArr[0].name)
+        myTableView.reloadData()
+    }
+    
+    func tableSetup(){
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height * 2
@@ -58,6 +79,15 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.view.addSubview(myTableView)
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return displayArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
+        cell.textLabel!.text = "\(displayArray[indexPath.row])"
+        return cell
+    }
     
 }
 
@@ -66,6 +96,8 @@ extension WorkoutViewController{
         let alert = UIAlertController(title: "New Workout", message: "Type in the name of the new workout!", preferredStyle: UIAlertController.Style.alert)
         let action = UIAlertAction(title: "Add Workout", style: .default) { (addWorkoutDialogClick) in
             let textField = alert.textFields![0] as UITextField
+            self.displayArray.append(textField.text!)
+            self.myTableView.reloadData()
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addTextField { (textField) in
@@ -74,10 +106,6 @@ extension WorkoutViewController{
         alert.addAction(cancel)
         alert.addAction(action)
         self.present(alert, animated:true, completion: nil)
-    }
-    
-    @objc func addWorkoutDialogClick(){
-        
     }
     
     @objc func workoutButtonClick(){
