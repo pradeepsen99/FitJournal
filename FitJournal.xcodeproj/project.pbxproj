@@ -13,6 +13,10 @@
 		6A5237E6229F9037001A0D73 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5237E5229F9037001A0D73 /* WorkoutViewController.swift */; };
 		6A5237E8229F97D8001A0D73 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5237E7229F97D8001A0D73 /* StatsViewController.swift */; };
 		6A5237EA229F9847001A0D73 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5237E9229F9847001A0D73 /* ProfileViewController.swift */; };
+		6A82A81922E2B9510058DBA2 /* WorkoutDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82A81822E2B9510058DBA2 /* WorkoutDetailViewController.swift */; };
+		6A82A81B22E2B9670058DBA2 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82A81A22E2B9670058DBA2 /* ExerciseDetailViewController.swift */; };
+		6A82A81D22E2BB2C0058DBA2 /* WorkoutEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82A81C22E2BB2C0058DBA2 /* WorkoutEditViewController.swift */; };
+		6A82A81F22E2BBE60058DBA2 /* ExerciseEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82A81E22E2BBE60058DBA2 /* ExerciseEditViewController.swift */; };
 		6AE243982288D037004A06EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE243972288D037004A06EE /* AppDelegate.swift */; };
 		6AE2439A2288D037004A06EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE243992288D037004A06EE /* ViewController.swift */; };
 		6AE2439D2288D037004A06EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE2439B2288D037004A06EE /* Main.storyboard */; };
@@ -29,6 +33,10 @@
 		6A5237E5229F9037001A0D73 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		6A5237E7229F97D8001A0D73 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		6A5237E9229F9847001A0D73 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6A82A81822E2B9510058DBA2 /* WorkoutDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailViewController.swift; sourceTree = "<group>"; };
+		6A82A81A22E2B9670058DBA2 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
+		6A82A81C22E2BB2C0058DBA2 /* WorkoutEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEditViewController.swift; sourceTree = "<group>"; };
+		6A82A81E22E2BBE60058DBA2 /* ExerciseEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEditViewController.swift; sourceTree = "<group>"; };
 		6AE243942288D037004A06EE /* FitJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE243972288D037004A06EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AE243992288D037004A06EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +118,10 @@
 				6A5237E9229F9847001A0D73 /* ProfileViewController.swift */,
 				6A14562D22D96A42004710ED /* ExerciseViewController.swift */,
 				6A14562F22DA717B004710ED /* StructDataType.swift */,
+				6A82A81822E2B9510058DBA2 /* WorkoutDetailViewController.swift */,
+				6A82A81A22E2B9670058DBA2 /* ExerciseDetailViewController.swift */,
+				6A82A81C22E2BB2C0058DBA2 /* WorkoutEditViewController.swift */,
+				6A82A81E22E2BBE60058DBA2 /* ExerciseEditViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -233,11 +245,15 @@
 				6A14563022DA717B004710ED /* StructDataType.swift in Sources */,
 				6A5237EA229F9847001A0D73 /* ProfileViewController.swift in Sources */,
 				6AE243A02288D037004A06EE /* FitJournal.xcdatamodeld in Sources */,
+				6A82A81B22E2B9670058DBA2 /* ExerciseDetailViewController.swift in Sources */,
 				6AE2439A2288D037004A06EE /* ViewController.swift in Sources */,
+				6A82A81922E2B9510058DBA2 /* WorkoutDetailViewController.swift in Sources */,
 				6A5237E6229F9037001A0D73 /* WorkoutViewController.swift in Sources */,
 				6AE243982288D037004A06EE /* AppDelegate.swift in Sources */,
+				6A82A81F22E2BBE60058DBA2 /* ExerciseEditViewController.swift in Sources */,
 				6A14562E22D96A42004710ED /* ExerciseViewController.swift in Sources */,
 				6A5237E8229F97D8001A0D73 /* StatsViewController.swift in Sources */,
+				6A82A81D22E2BB2C0058DBA2 /* WorkoutEditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
