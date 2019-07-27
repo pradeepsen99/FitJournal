@@ -15,7 +15,7 @@ class Exercise : Codable{
     var name = ""
     var id = 0
     var type = ""
-    var musclesWorked = [String]()
+    var musclesWorked : [String]?
     var equipment = ""
     var notes = ""
     var oneRM = 0
@@ -26,11 +26,10 @@ class Exercise : Codable{
 class Workout : Codable{
     init(){
         name = "test"
-        
     }
     var name = "test"
     var id = 0
-    var exercises = [Exercise]()
+    var exercises : [Exercise]?
     var numberOfAttempts = 0
     var notes = ""
 }
@@ -54,9 +53,9 @@ class Date : Codable {
 }
 
 class WorkoutLog : Codable {
-    var workout : Workout? = nil
+    var workout : Workout?
     var timeSpentMinutes = 0.0
-    var startTime : Date? = nil
-    var endTime : Date? = nil
+    var startTime : Date?
+    var endTime : Date?
     var uniqueID = 0
 }
