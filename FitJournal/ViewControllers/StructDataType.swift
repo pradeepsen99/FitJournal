@@ -6,7 +6,12 @@
 //  Copyright © 2019 Pradeep Kumar. All rights reserved.
 //
 
-struct Exercise {
+class Muscles : Codable{
+    var name = ""
+    var exercises = [Exercise]()
+}
+
+class Exercise : Codable{
     var name = ""
     var id = 0
     var type = ""
@@ -25,8 +30,33 @@ class Workout : Codable{
     }
     var name = "test"
     var id = 0
-    //var exercises = [Exercise]()
+    var exercises = [Exercise]()
     var numberOfAttempts = 0
-    var timeTaken = 0
     var notes = ""
+}
+
+class Date : Codable {
+    var year = 0
+    var month = 0
+    var day = 0
+    var hour = 0
+    var minute = 0
+    var second = 0
+    
+    init (yearInput: Int, monthInput: Int, dayInput: Int, hourInput: Int, minuteInput: Int, secondInput: Int){
+        year = yearInput
+        month = monthInput
+        day  = dayInput
+        hour = hourInput
+        minute = minuteInput
+        second = secondInput
+    }
+}
+
+class WorkoutLog : Codable {
+    var workout : Workout? = nil
+    var timeSpentMinutes = 0.0
+    var startTime : Date? = nil
+    var endTime : Date? = nil
+    var uniqueID = 0
 }
