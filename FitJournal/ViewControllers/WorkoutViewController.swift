@@ -17,6 +17,7 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //Code to check if it is the first time running. If it is the first time code is executed then
         //add a sample workout to fill in data-type
         let firstRun = UserDefaults.standard.bool(forKey: "firstRun") as Bool
@@ -89,9 +90,14 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewWorkout()
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension WorkoutViewController{
+    
     @objc func plusButtonClick(){
         let alert = UIAlertController(title: "New Workout", message: "Type in the name of the new workout!", preferredStyle: UIAlertController.Style.alert)
         let action = UIAlertAction(title: "Add Workout", style: .default) { (addWorkoutDialogClick) in
@@ -110,5 +116,10 @@ extension WorkoutViewController{
     
     @objc func workoutButtonClick(){
         
+    }
+    
+    
+    func viewWorkout() {
+        navigationController?.pushViewController(WorkoutEditViewController(), animated: true)
     }
 }

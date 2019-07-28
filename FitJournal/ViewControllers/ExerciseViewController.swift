@@ -53,7 +53,7 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    
+
 }
 
 extension ExerciseViewController{
@@ -70,5 +70,6 @@ extension ExerciseViewController{
         alert.addAction(action)
         self.present(alert, animated:true, completion: nil)
     }
+
 }
 
