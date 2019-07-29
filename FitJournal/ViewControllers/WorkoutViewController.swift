@@ -52,6 +52,12 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func firstTimeRun(){
         
+        //Init exercise array
+        //let benchPress = Exercise.init()
+        //benchPress.name = "Bench Press"
+        
+        let squat = Exercise.init()
+        
         let workoutSample = Workout.init()
         
         var workoutArr = [Workout]()
@@ -60,6 +66,16 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         let workoutData = try! JSONEncoder().encode(workoutArr)
         UserDefaults.standard.set(workoutData, forKey: "savedWorkouts")
     }
+    
+    func firstTimeEquipmentRun() {
+        
+    }
+    
+    func firstTimeExerciseRun() {
+        
+    }
+    
+    
     
     func arraySetup(){
         let workoutData = UserDefaults.standard.data(forKey: "savedWorkouts")

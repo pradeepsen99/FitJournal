@@ -6,24 +6,29 @@
 //  Copyright © 2019 Pradeep Kumar. All rights reserved.
 //
 
-class Muscles : Codable{
+struct Muscles : Codable{
     var name = ""
     var exercises = [Exercise]()
 }
 
-class Exercise : Codable{
+struct Exercise : Codable{
     var name = ""
     var id = 0
     var type = ""
     var musclesWorked : [String]?
-    var equipment = ""
+    var equipment : Equipment?
     var notes = ""
     var oneRM = 0
     var numberOfSets = 0
     var numofReps = 0
 }
 
-class Workout : Codable{
+struct Equipment : Codable {
+    var name = ""
+    var id = 0
+}
+
+struct Workout : Codable {
     init(){
         name = "test"
     }
@@ -34,7 +39,7 @@ class Workout : Codable{
     var notes = ""
 }
 
-class Date : Codable {
+struct Date : Codable {
     var year = 0
     var month = 0
     var day = 0
@@ -52,7 +57,7 @@ class Date : Codable {
     }
 }
 
-class WorkoutLog : Codable {
+struct WorkoutLog : Codable {
     var workout : Workout?
     var timeSpentMinutes = 0.0
     var startTime : Date?

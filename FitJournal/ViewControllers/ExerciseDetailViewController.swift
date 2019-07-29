@@ -6,4 +6,8 @@
 //  Copyright © 2019 Pradeep Kumar. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ExerciseDetailViewController : UIViewController {
+    
+}
