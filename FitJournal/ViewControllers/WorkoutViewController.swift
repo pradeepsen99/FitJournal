@@ -53,15 +53,15 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     func firstTimeRun(){
         
         //Init exercise array
-        //let benchPress = Exercise.init()
+        let benchPress = Exercise.init("Bench Press", 0, "Strength", )
         //benchPress.name = "Bench Press"
         
-        let squat = Exercise.init()
+        //let squat = Exercise.init()
         
-        let workoutSample = Workout.init()
+        //let workoutSample = Workout.init()
         
         var workoutArr = [Workout]()
-        workoutArr.append(workoutSample)
+        //workoutArr.append(workoutSample)
         
         let workoutData = try! JSONEncoder().encode(workoutArr)
         UserDefaults.standard.set(workoutData, forKey: "savedWorkouts")
@@ -72,6 +72,10 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func firstTimeExerciseRun() {
+        
+    }
+    
+    func firstTimeMuscleRun() {
         
     }
     

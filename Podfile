@@ -9,6 +9,6 @@ target 'FitJournal' do
   pod 'Charts'
   pod 'FSCalendar'
   pod 'SwipeCellKit'
-  
+  pod 'Eureka'
 
 end
