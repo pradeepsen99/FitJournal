@@ -53,7 +53,7 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     func firstTimeRun(){
         
         //Init exercise array
-        let benchPress = Exercise.init("Bench Press", 0, "Strength", )
+        //let benchPress = Exercise.init("Bench Press", 0, "Strength", )
         //benchPress.name = "Bench Press"
         
         //let squat = Exercise.init()
