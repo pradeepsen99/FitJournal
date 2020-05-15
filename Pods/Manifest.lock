@@ -1,10 +1,10 @@
 PODS:
-  - Charts (3.3.0):
-    - Charts/Core (= 3.3.0)
-  - Charts/Core (3.3.0)
-  - Eureka (5.0.0)
-  - FSCalendar (2.8.0)
-  - SwipeCellKit (2.6.0)
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
+  - Eureka (5.2.1)
+  - FSCalendar (2.8.1)
+  - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
   - Charts
@@ -13,18 +13,18 @@ DEPENDENCIES:
   - SwipeCellKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Charts
     - Eureka
     - FSCalendar
     - SwipeCellKit
 
 SPEC CHECKSUMS:
-  Charts: ec1f57f9340054155691e84d4544a1d239d382c5
-  Eureka: 0f64f477ec8ef6201c6fec143d60ff5c201cf654
-  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
-  SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
+  Eureka: c883105488e05bc65539f583246ecf9657cabbfe
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
 PODFILE CHECKSUM: 80cb0a9a5ab53bef217ccfa6dba4b82fc121dda7
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1

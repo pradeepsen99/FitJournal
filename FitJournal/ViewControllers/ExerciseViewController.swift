@@ -53,6 +53,11 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewExercise()
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 
 }
 
@@ -69,6 +74,11 @@ extension ExerciseViewController{
         alert.addAction(cancel)
         alert.addAction(action)
         self.present(alert, animated:true, completion: nil)
+    }
+    
+    
+    func viewExercise() {
+        navigationController?.pushViewController(ExerciseEditViewController(), animated: true)
     }
 
 }

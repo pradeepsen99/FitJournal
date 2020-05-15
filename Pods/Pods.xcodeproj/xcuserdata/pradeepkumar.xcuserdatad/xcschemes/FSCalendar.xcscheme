@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "16787FDA28EEEB5542008F813C430E76"
+               BlueprintIdentifier = "13285D54682BEAD805960F9E6EEB9949"
+               BuildableName = "FSCalendar.framework"
                BlueprintName = "FSCalendar"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "FSCalendar.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

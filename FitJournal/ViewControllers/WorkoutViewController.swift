@@ -26,8 +26,6 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
             UserDefaults.standard.set(true, forKey: "firstRun")
         }
         
-        
-        
         self.navigationController?.navigationBar.topItem?.title = "Workout"
         
         plusButton = UIBarButtonItem.init(
@@ -55,7 +53,6 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         //Init exercise array
         //let benchPress = Exercise.init("Bench Press", 0, "Strength", )
         //benchPress.name = "Bench Press"
-        
         //let squat = Exercise.init()
         
         //let workoutSample = Workout.init()
@@ -84,7 +81,8 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     func arraySetup(){
         let workoutData = UserDefaults.standard.data(forKey: "savedWorkouts")
         let workoutArr = try! JSONDecoder().decode([Workout].self, from: workoutData!)
-        displayArray.append(workoutArr[0].name)
+        //TOOD fix error with first time running.
+        //displayArray.append(workoutArr[0].name)
         myTableView.reloadData()
     }
     
@@ -137,7 +135,6 @@ extension WorkoutViewController{
     @objc func workoutButtonClick(){
         
     }
-    
     
     func viewWorkout() {
         navigationController?.pushViewController(WorkoutEditViewController(), animated: true)
