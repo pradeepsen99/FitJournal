@@ -15,6 +15,8 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     //var displayArray = ["Chest Day","Back Day","Bicep Day"]
     var myTableView: UITableView!
     
+    var current_workout: String = ""
+    
     var workout: [NSManagedObject] = []
 
     
@@ -53,27 +55,27 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-      
-      //1
-      guard let appDelegate =
-        UIApplication.shared.delegate as? AppDelegate else {
-          return
-      }
-      
-      let managedContext =
-        appDelegate.persistentContainer.viewContext
-      
-      //2
-      let fetchRequest =
-        NSFetchRequest<NSManagedObject>(entityName: "Workout")
-      
-      //3
-      do {
-        workout = try managedContext.fetch(fetchRequest)
-      } catch let error as NSError {
-        print("Could not fetch. \(error), \(error.userInfo)")
-      }
+          super.viewWillAppear(animated)
+          
+          //1
+          guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+              return
+          }
+          
+          let managedContext =
+            appDelegate.persistentContainer.viewContext
+          
+          //2
+          let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Workout")
+          
+          //3
+          do {
+            workout = try managedContext.fetch(fetchRequest)
+          } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+          }
     }
     
     func arraySetup(){
@@ -107,6 +109,7 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        current_workout = workout[indexPath.row].value(forKeyPath: "name") as! String
         viewWorkout()
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -166,6 +169,6 @@ extension WorkoutViewController{
     }
     
     func viewWorkout() {
-        navigationController?.pushViewController(WorkoutEditViewController(), animated: true)
+        navigationController?.pushViewController(WorkoutEditViewController(workout: current_workout), animated: true)
     }
 }
