@@ -60,8 +60,8 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         var workoutArr = [Workout]()
         //workoutArr.append(workoutSample)
         
-        let workoutData = try! JSONEncoder().encode(workoutArr)
-        UserDefaults.standard.set(workoutData, forKey: "savedWorkouts")
+        //let workoutData = try! JSONEncoder().encode(workoutArr)
+        //UserDefaults.standard.set(workoutData, forKey: "savedWorkouts")
     }
     
     func firstTimeEquipmentRun() {
@@ -80,7 +80,7 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func arraySetup(){
         let workoutData = UserDefaults.standard.data(forKey: "savedWorkouts")
-        let workoutArr = try! JSONDecoder().decode([Workout].self, from: workoutData!)
+        //let workoutArr = try! JSONDecoder().decode([Workout].self, from: workoutData!)
         //TOOD fix error with first time running.
         //displayArray.append(workoutArr[0].name)
         myTableView.reloadData()

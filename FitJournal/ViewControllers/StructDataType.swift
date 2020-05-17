@@ -5,7 +5,7 @@
 //  Created by Pradeep Kumar on 7/13/19.
 //  Copyright © 2019 Pradeep Kumar. All rights reserved.
 //
-
+/*
 struct Muscles : Codable{
     var name = ""
     var exercises = [Exercise]()
@@ -16,7 +16,7 @@ struct Muscles : Codable{
     }
 }
 
-struct Exercise : Codable{
+class Exercise : Codable{
     var name = ""
     var id = 0
     var type = ""
@@ -101,3 +101,4 @@ struct WorkoutLog : Codable {
         uniqueID = uniqueIDInput
     }
 }
+*/

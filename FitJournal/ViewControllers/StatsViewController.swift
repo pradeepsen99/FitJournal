@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class StatsViewController: UIViewController {
     
@@ -15,6 +16,5 @@ class StatsViewController: UIViewController {
         
         self.navigationController?.navigationBar.topItem?.title = "Stats"
     }
-    
     
 }
