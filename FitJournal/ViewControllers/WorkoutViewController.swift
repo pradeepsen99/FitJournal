@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var plusButton: UIBarButtonItem? = nil
     var addWorkoutButton: UIBarButtonItem? = nil
-    var displayArray = ["Chest Day","Back Day","Bicep Day"]
+    //var displayArray = ["Chest Day","Back Day","Bicep Day"]
     var myTableView: UITableView!
+    
+    var workout: [NSManagedObject] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +26,7 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         //add a sample workout to fill in data-type
         let firstRun = UserDefaults.standard.bool(forKey: "firstRun") as Bool
         if !firstRun {
-            firstTimeRun()
+            //firstTimeRun()
             UserDefaults.standard.set(true, forKey: "firstRun")
         }
         
@@ -48,38 +52,32 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         arraySetup()
     }
     
-    func firstTimeRun(){
-        
-        //Init exercise array
-        //let benchPress = Exercise.init("Bench Press", 0, "Strength", )
-        //benchPress.name = "Bench Press"
-        //let squat = Exercise.init()
-        
-        //let workoutSample = Workout.init()
-        
-        var workoutArr = [Workout]()
-        //workoutArr.append(workoutSample)
-        
-        //let workoutData = try! JSONEncoder().encode(workoutArr)
-        //UserDefaults.standard.set(workoutData, forKey: "savedWorkouts")
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      
+      //1
+      guard let appDelegate =
+        UIApplication.shared.delegate as? AppDelegate else {
+          return
+      }
+      
+      let managedContext =
+        appDelegate.persistentContainer.viewContext
+      
+      //2
+      let fetchRequest =
+        NSFetchRequest<NSManagedObject>(entityName: "Workout")
+      
+      //3
+      do {
+        workout = try managedContext.fetch(fetchRequest)
+      } catch let error as NSError {
+        print("Could not fetch. \(error), \(error.userInfo)")
+      }
     }
-    
-    func firstTimeEquipmentRun() {
-        
-    }
-    
-    func firstTimeExerciseRun() {
-        
-    }
-    
-    func firstTimeMuscleRun() {
-        
-    }
-    
-    
     
     func arraySetup(){
-        let workoutData = UserDefaults.standard.data(forKey: "savedWorkouts")
+        //let workoutData = UserDefaults.standard.data(forKey: "savedWorkouts")
         //let workoutArr = try! JSONDecoder().decode([Workout].self, from: workoutData!)
         //TOOD fix error with first time running.
         //displayArray.append(workoutArr[0].name)
@@ -99,18 +97,48 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayArray.count
+        return workout.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
-        cell.textLabel!.text = "\(displayArray[indexPath.row])"
+        cell.textLabel!.text = workout[indexPath.row].value(forKeyPath: "name") as? String
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewWorkout()
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func save(name: String) {
+          guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+            return
+          }
+          
+          // 1
+          let managedContext =
+            appDelegate.persistentContainer.viewContext
+          
+          // 2
+          let entity =
+            NSEntityDescription.entity(forEntityName: "Workout",
+                                       in: managedContext)!
+          
+          let work = NSManagedObject(entity: entity,
+                                       insertInto: managedContext)
+          
+          // 3
+          work.setValue(name, forKeyPath: "name")
+          
+          // 4
+          do {
+            try managedContext.save()
+            workout.append(work)
+          } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+          }
     }
 }
 
@@ -120,7 +148,8 @@ extension WorkoutViewController{
         let alert = UIAlertController(title: "New Workout", message: "Type in the name of the new workout!", preferredStyle: UIAlertController.Style.alert)
         let action = UIAlertAction(title: "Add Workout", style: .default) { (addWorkoutDialogClick) in
             let textField = alert.textFields![0] as UITextField
-            self.displayArray.append(textField.text!)
+            //self.displayArray.append(textField.text!)
+            self.save(name: textField.text!)
             self.myTableView.reloadData()
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)

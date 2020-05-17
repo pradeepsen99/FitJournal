@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ExerciseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
