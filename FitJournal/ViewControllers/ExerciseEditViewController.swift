@@ -9,12 +9,21 @@
 import Eureka
 
 class ExerciseEditViewController : FormViewController {
-    //let currExercise = Exercise(from: Decoder);
+    var current_exercise = ""
+    
+    init(exercise: String) {
+        current_exercise = exercise
+        super.init(nibName: nil, bundle: nil)
+    }
+    //Required function -- Forced to add
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Edit Exercise";
+        self.navigationItem.title = current_exercise
         
         //Using Eurekas form builder
         /*

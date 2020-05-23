@@ -11,9 +11,10 @@ import CoreData
 
 class ExerciseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var displayArray = ["Bench Press","Squats","Deadlift"]
     var myTableView: UITableView!
     var settingsButton: UIBarButtonItem? = nil
+    var current_exercise = "";
+    var exercise: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,29 +46,74 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayArray.count
+        return exercise.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
-        cell.textLabel!.text = "\(displayArray[indexPath.row])"
+        cell.textLabel!.text = exercise[indexPath.row].value(forKeyPath: "name") as? String
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        current_exercise = exercise[indexPath.row].value(forKeyPath: "name") as! String
         viewExercise()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+          
+          //1
+          guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+              return
+          }
+          
+          let managedContext =
+            appDelegate.persistentContainer.viewContext
+          
+          //2
+          let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Exercise")
+          
+          //3
+          do {
+            exercise = try managedContext.fetch(fetchRequest)
+          } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+          }
+    }
+    
+    //Saves the string into coreData as a new exercise instance
+    func save(name: String) {
+          guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+            return
+          }
 
+          let managedContext = appDelegate.persistentContainer.viewContext
+
+          let entity = NSEntityDescription.entity(forEntityName: "Exercise", in: managedContext)!
+          
+          let work = NSManagedObject(entity: entity, insertInto: managedContext)
+          work.setValue(name, forKeyPath: "name")
+
+          do {
+            try managedContext.save()
+            exercise.append(work)
+          } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+          }
+    }
 }
 
 extension ExerciseViewController{
     @objc func addExerciseButtonClick(){
         let alert = UIAlertController(title: "New Exercise", message: "Type in the name of the new exercise!", preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: "Add Exercise", style: .default) { (addWorkoutDialogClick) in
+        let action = UIAlertAction(title: "Add Exercise", style: .default) { (addExerciseDialogClick) in
             let textField = alert.textFields![0] as UITextField
-            self.displayArray.append(textField.text!)
+            self.save(name: textField.text!)
             self.myTableView.reloadData()
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
@@ -81,7 +127,7 @@ extension ExerciseViewController{
     
     
     func viewExercise() {
-        navigationController?.pushViewController(ExerciseEditViewController(), animated: true)
+        navigationController?.pushViewController(ExerciseEditViewController(exercise: current_exercise), animated: true)
     }
 
 }
