@@ -42,7 +42,8 @@ class ExerciseEditViewController : FormViewController {
             +++ Section("Information")
                 <<< TextRow(){ row in
                     row.title = "Name"
-                    row.placeholder = "Enter text here"
+                    row.placeholder = "Enter exercise name"
+                    row.baseValue = current_exercise
                     row.tag = "Name"
                     }.onChange {_ in
                         let row: TextRow? = self.form.rowBy(tag: "Name")
@@ -59,12 +60,23 @@ class ExerciseEditViewController : FormViewController {
                         let value = row?.value
                         self.navigationItem.title = value;
                     }
-            +++ Section("Muscles Worked")
-                <<< TextRow(){ row in
-                    row.title = "Muscle Group"
-                    row.placeholder = "Enter text here"
-                    row.tag = "Muscle Group"
+            +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
+                               header: "Muscle Groups",
+                               footer: "Adds muscle groups. To add more click on 'Add new Muscle Group'") {
+                $0.addButtonProvider = { section in
+                    return ButtonRow(){
+                        $0.title = "Add New Muscle Group"
+                    }
                 }
+                $0.multivaluedRowToInsertAt = { index in
+                    return NameRow() {
+                        $0.placeholder = "Muscle Group Name"
+                    }
+                }
+                $0 <<< NameRow() {
+                    $0.placeholder = "Muscle Group Name"
+                }
+            }
         
             +++ Section("Personal Notes")
                 <<< TextAreaRow("Personal Notes") { row in
