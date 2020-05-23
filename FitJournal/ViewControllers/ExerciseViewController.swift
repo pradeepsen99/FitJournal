@@ -67,6 +67,8 @@ extension ExerciseViewController{
         let alert = UIAlertController(title: "New Exercise", message: "Type in the name of the new exercise!", preferredStyle: UIAlertController.Style.alert)
         let action = UIAlertAction(title: "Add Exercise", style: .default) { (addWorkoutDialogClick) in
             let textField = alert.textFields![0] as UITextField
+            self.displayArray.append(textField.text!)
+            self.myTableView.reloadData()
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addTextField { (textField) in

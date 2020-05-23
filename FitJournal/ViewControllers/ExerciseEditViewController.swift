@@ -70,6 +70,6 @@ class ExerciseEditViewController : FormViewController {
                     })
         
         
-        let valuesDictionary = form.values();
+        //let valuesDictionary = form.values();
     }
 }

@@ -12,7 +12,6 @@ import CoreData
 class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var plusButton: UIBarButtonItem? = nil
     var addWorkoutButton: UIBarButtonItem? = nil
-    //var displayArray = ["Chest Day","Back Day","Bicep Day"]
     var myTableView: UITableView!
     
     var current_workout: String = ""
@@ -114,28 +113,20 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    //Saves the string into coreData as a new workout instance
     func save(name: String) {
           guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
             return
           }
+
+          let managedContext = appDelegate.persistentContainer.viewContext
+
+          let entity = NSEntityDescription.entity(forEntityName: "Workout", in: managedContext)!
           
-          // 1
-          let managedContext =
-            appDelegate.persistentContainer.viewContext
-          
-          // 2
-          let entity =
-            NSEntityDescription.entity(forEntityName: "Workout",
-                                       in: managedContext)!
-          
-          let work = NSManagedObject(entity: entity,
-                                       insertInto: managedContext)
-          
-          // 3
+          let work = NSManagedObject(entity: entity, insertInto: managedContext)
           work.setValue(name, forKeyPath: "name")
-          
-          // 4
+
           do {
             try managedContext.save()
             workout.append(work)

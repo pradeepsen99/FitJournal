@@ -29,16 +29,13 @@ class WorkoutEditViewController : FormViewController {
         form +++ Section("Information")
             <<< TextRow(){ row in
                 row.title = "Name"
-                row.placeholder = "Enter text here"
+                row.placeholder = current_workout
                 row.tag = "Name"
                 }.onChange {_ in
                     let row: TextRow? = self.form.rowBy(tag: "Name")
                     let value = row?.value
                     self.navigationItem.title = value;
                 }
-        
-        
-        
     }
     
 }
